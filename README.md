@@ -2,4 +2,4 @@
 
 ### THIS IS YOUR README
 
-Update this file as you go along to record your progress.
+My design is based on the circadian cycle, representing time through the intensity and colour of light. To match our body's natural rhythms, smoothly shifting from bright, energizing colours in the morning to soothing, mellow tones as night falls.
