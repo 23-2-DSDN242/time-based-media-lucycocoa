@@ -24,13 +24,14 @@ function draw_clock(obj) {
   // ellipse(width / 2, 350, 150);
   // fill(175, 133, 255); // purple
   // ellipse(width / 3 * 2, 350, 150);
-  drawingContext.shadowOffsetX = 5;
-  drawingContext.shadowOffsetY = -5;
-  drawingContext.shadowBlur = 50;
+  drawingContext.shadowOffsetX = 2;
+  drawingContext.shadowOffsetY = -2;
+  drawingContext.shadowBlur = 200;
   drawingContext.shadowColor = 'white';
   background(0);
   noStroke(0)
-  ellipse(width / 2, height / 2, 100, 100);
+  fill(0)
+  ellipse(width / 2, height / 2, 200, 200);
 
 
 }
