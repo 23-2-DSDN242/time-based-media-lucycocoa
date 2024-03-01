@@ -2,7 +2,7 @@
 function draw_clock(obj) {
 
   let height = 500/2.5
-  let width = 960/6
+  let width = 960/6.5
   // YOUR MAIN CLOCK CODE GOES HERE
   background(50); //  beige
   // fill(200); // dark grey
