@@ -37,13 +37,15 @@ function draw_clock(obj) {
   fill(255)
 
   noStroke(0)
-  drawingContext.shadowOffsetX = 2;
-  drawingContext.shadowOffsetY = 7;
-  drawingContext.shadowBlur = 200;
-  drawingContext.shadowColor = 'red';
+  // drawingContext.shadowOffsetX = 2;
+  // drawingContext.shadowOffsetY = 7;
+  // drawingContext.shadowBlur = 200;
+  // drawingContext.shadowColor = 'red';
   noStroke()
   fill(255)
-  ellipse(width / 2, 115, 30, 30);
+  translate(width/2,height/2)
+  translate(p5.Vector.fromAngle(millis()/ width/3,height/3))
+  ellipse(0, 0, 30, 30);
 
   text("11")
   
