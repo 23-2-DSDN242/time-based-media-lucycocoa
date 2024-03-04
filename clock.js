@@ -32,6 +32,7 @@ function draw_clock(obj) {
   noStroke(0)
   fill(0)
   ellipse(width / 2, height / 2, 300, 300);
+  //Center clock
 
   
   fill(255)
