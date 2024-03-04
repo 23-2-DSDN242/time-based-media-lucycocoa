@@ -4,11 +4,18 @@ function draw_clock(obj) {
   let height = 500/2.5
   let width = 960/6.5
   // YOUR MAIN CLOCK CODE GOES HERE
-  background(50); //  beige
+  background(30); //  beige
   // fill(200); // dark grey
   // textSize(40);
   // textAlign(CENTER, CENTER);
   // text("YOUR MAEDA CLOCK CODE GOES HERE", width/2, height/2);
+
+  drawingContext.shadowOffsetX = 1;
+  drawingContext.shadowOffsetY = -1;
+  drawingContext.shadowBlur = 50;
+  drawingContext.shadowColor = 'white';
+
+  noStroke()
   fill(255)
   
 ellipse(width,height,15,15)
@@ -109,10 +116,23 @@ ellipse(width+630,height+30,15,15)
 ellipse(width+615,height+45,15,15)
 ellipse(width+615,height+60,15,15)
 ellipse(width+615,height+75,15,15)
+// 7
 
+drawingContext.shadowOffsetX = 1;
+  drawingContext.shadowOffsetY = -1;
+  drawingContext.shadowBlur = 50;
+  drawingContext.shadowColor = 'purple';
 
+  fill('purple')
 
+  let xarray = [20,50,80,110,140];
 
+// ellipse(width+700,height+175,5,5)
+for(let i= 0; i <=height; i++){
+  let yarray = i * 25
+  // ellipse(xarray[i],200,5,5)
+  ellipse(55*i,yarray+50,5,5)
+}
 
 
 }
