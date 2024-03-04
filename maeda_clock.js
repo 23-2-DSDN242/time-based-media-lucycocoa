@@ -123,7 +123,7 @@ drawingContext.shadowOffsetX = 1;
   drawingContext.shadowBlur = 50;
   drawingContext.shadowColor = 'purple';
 
-  fill('purple')
+  fill('purple')///
 
   let xarray = [20,50,80,110,140];
 
