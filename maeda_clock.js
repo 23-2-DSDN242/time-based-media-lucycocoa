@@ -12,6 +12,37 @@ function draw_clock(obj) {
 
   drawingContext.shadowOffsetX = 1;
   drawingContext.shadowOffsetY = -1;
+  drawingContext.shadowBlur = 10;
+  drawingContext.shadowColor = 'purple';
+
+  fill('purple')///
+
+  // let xarray = [20,50,80,110,140];
+
+// ellipse(width+700,height+175,5,5)
+  for (let i= 0; i <=height; i++){
+  let yarray = i * 26
+ 
+  rect(460,yarray+30,5,5)
+  rect(480,yarray+30,5,5)
+  rect(500,yarray+30,5,5)
+  rect(520,yarray+30,5,5)
+ 
+}
+//how to loop xarrays
+
+for (let ii= 0; ii <=height; ii++){
+  let xarray = ii * 20
+  rect(xarray,4,5,5)
+  rect(xarray,30,5,5)
+  rect(xarray,56,5,5)
+  rect(xarray,82,5,5)
+  rect(xarray,108,5,5)
+
+}
+
+  drawingContext.shadowOffsetX = 1;
+  drawingContext.shadowOffsetY = -1;
   drawingContext.shadowBlur = 50;
   drawingContext.shadowColor = 'white';
 
@@ -118,21 +149,7 @@ ellipse(width+615,height+60,15,15)
 ellipse(width+615,height+75,15,15)
 // 7
 
-drawingContext.shadowOffsetX = 1;
-  drawingContext.shadowOffsetY = -1;
-  drawingContext.shadowBlur = 50;
-  drawingContext.shadowColor = 'purple';
 
-  fill('purple')///
-
-  let xarray = [20,50,80,110,140];
-
-// ellipse(width+700,height+175,5,5)
-for(let i= 0; i <=height; i++){
-  let yarray = i * 25
-  // ellipse(xarray[i],200,5,5)
-  ellipse(55*i,yarray+50,5,5)
-}
 
 
 }

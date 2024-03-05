@@ -11,14 +11,15 @@ function draw_clock(obj) {
   //        < 0 if no alarm is set
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
-  background(50); //  beige
+  background(50); // dark grey
 
-  let black = color(253,	201,	46)
-  let purple = color(0)
-  let pink = color(255)
+  let yellow = color(253,	201,	46)
+  let black = color(0)
+
   let hoursForLerp = map(obj.hours, 0,23,0,1)
-  let colorL = lerpColor(black,purple,hoursForLerp)
+  let colorL = lerpColor(yellow,black,hoursForLerp)
   console.log(hoursForLerp)
+  // I want to present at least 6 colours white,yellow,blue,pink,purple,black
   
 
   drawingContext.shadowOffsetX = 2;
