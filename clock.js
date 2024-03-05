@@ -12,30 +12,29 @@ function draw_clock(obj) {
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
   background(50); //  beige
-  // fill(200); // dark grey
-  // textSize(50);
-  // textAlign(CENTER, CENTER);
-  // text("YOUR MAIN CLOCK CODE GOES HERE", width / 2, 200);
 
+  let black = color(253,	201,	46)
+  let purple = color(0)
+  let pink = color(255)
+  let hoursForLerp = map(obj.hours, 0,23,0,1)
+  let colorL = lerpColor(black,purple,hoursForLerp)
+  console.log(hoursForLerp)
+  
 
-  // fill(249, 140, 255);// pink
-  // ellipse(width / 3, 350, 150);
-  // fill(140, 255, 251) // blue
-  // ellipse(width / 2, 350, 150);
-  // fill(175, 133, 255); // purple
-  // ellipse(width / 3 * 2, 350, 150);
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = -2;
   drawingContext.shadowBlur = 200;
   drawingContext.shadowColor = 'white';
   background(0);
   noStroke(0)
-  fill(0)
+  fill(colorL)
   ellipse(width / 2, height / 2, 300, 300);
   //Center clock
 
   
   fill(255)
+  // let secondsWithFraction   = seconds + (millis / 1000.0);
+  // let ellipsesmooth  = map(secondsWithFraction, 0, 60, 0, width*6)
 
   noStroke(0)
   // drawingContext.shadowOffsetX = 2;
@@ -45,8 +44,11 @@ function draw_clock(obj) {
   noStroke()
   fill(255)
   translate(width/2,height/2)
-  translate(p5.Vector.fromAngle(millis()/ width/3,height/3))
-  ellipse(0, 0, 30, 30);
+  // translate(p5.Vector.fromAngle(obj.seconds/ width*102,height/3))
+  translate(p5.Vector.fromAngle(obj.millis/ width*6,height/3))
+  // ellipse(0, 0, 30, 30);
+
+  ellipse(0, 0, 10, 10);
 
   text("11")
   
