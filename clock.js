@@ -11,20 +11,26 @@ function draw_clock(obj) {
   //        < 0 if no alarm is set
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
+  
   background(50); // dark grey
+
+
+
+
 
   let yellow = color(253,	201,	46)
   let black = color(0)
+  
 
   let hoursForLerp = map(obj.hours, 0,23,0,1)
   let colorL = lerpColor(yellow,black,hoursForLerp)
   console.log(hoursForLerp)
   // I want to present at least 6 colours white,yellow,blue,pink,purple,black
-  
-
+  let bluram =map(obj.millis,0,1000,100,300)
+  push();
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = -2;
-  drawingContext.shadowBlur = 200;
+  drawingContext.shadowBlur = bluram;
   drawingContext.shadowColor = 'white';
   background(0);
   noStroke(0)
@@ -32,16 +38,24 @@ function draw_clock(obj) {
   ellipse(width / 2, height / 2, 300, 300);
   //Center clock
 
-  
-  fill(255)
+  pop();
+
   // let secondsWithFraction   = seconds + (millis / 1000.0);
   // let ellipsesmooth  = map(secondsWithFraction, 0, 60, 0, width*6)
 
-  noStroke(0)
-  // drawingContext.shadowOffsetX = 2;
-  // drawingContext.shadowOffsetY = 7;
-  // drawingContext.shadowBlur = 200;
-  // drawingContext.shadowColor = 'red';
+  // angleMode(DEGREES)
+  // push();
+  // rotate(0);
+  // fill(255)
+  // rect(width/2,height-400,5,30)
+  // rotate(5)
+  // rect(width/2,height-400,5,30)
+  // pop();
+ 
+
+
+push();
+
   noStroke()
   fill(255)
   translate(width/2,height/2)
@@ -50,8 +64,30 @@ function draw_clock(obj) {
   // ellipse(0, 0, 30, 30);
 
   ellipse(0, 0, 10, 10);
+  pop();
 
-  text("11")
+ 
+ 
+  fill(255)
+ellipse(width/2,height/2,10)
+
+push();  
+angleMode(DEGREES)
+  let hourHand =map(obj.hours,0,23,0,360)
+  
+  translate(width/2,height/2)
+
+  for( let i=0; i<24; i++){
+
+
+rotate(360/24)
+
+rect(0,height-380,5,30)
+
+  
+  }
+  pop();
+
   
 
 }
