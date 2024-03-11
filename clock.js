@@ -12,33 +12,69 @@ function draw_clock(obj) {
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
   
-  background(50); // dark grey
+  background(0); // dark grey
 
-
+ 
 
 
 
   let yellow = color(253,	201,	46)
   let black = color(0)
+  let white= color(255)
+  let darkblue = color(7,55,99)
+  let deepYellow = color(245,174,101)
+  let lemon = color(255,233,170)
+  let skyBlue = color(159,197,232)
   
 
   let hoursForLerp = map(obj.hours, 0,23,0,1)
-  let colorL = lerpColor(yellow,black,hoursForLerp)
+  // let ZerotothreeLerp = map(obj.hours, 0,3,0,1)
+
+  let colorL =lerpColor(black, darkblue, hoursForLerp);
+  
+  if (obj.hours >= 0 && obj.hours < 3) {
+    hoursForLerp = map(obj.hours, 0, 3, 0, 1);
+    colorL = lerpColor(black, darkblue, hoursForLerp);
+  } else if (obj.hours >= 3 && obj.hours < 6) {
+    hoursForLerp = map(obj.hours, 3, 6, 0, 1);
+    colorL = lerpColor(darkblue, skyBlue, hoursForLerp);}
+    else if (obj.hours >= 6 && obj.hours < 9) {
+      hoursForLerp = map(obj.hours, 6, 9, 0, 1);
+      colorL = lerpColor(skyBlue, lemon, hoursForLerp);
+    } else if (obj.hours >= 9 && obj.hours < 12) {
+      hoursForLerp = map(obj.hours, 9, 12, 0, 1);
+      colorL = lerpColor(lemon, yellow, hoursForLerp);
+    } else if (obj.hours >= 12 && obj.hours < 15) {
+      hoursForLerp = map(obj.hours, 12, 15, 0, 1);
+      colorL = lerpColor(yellow, deepYellow, hoursForLerp);
+    } else if (obj.hours >= 15 && obj.hours < 18) {
+      hoursForLerp = map(obj.hours, 15, 18, 0, 1);
+      colorL = lerpColor(deepYellow, skyBlue, hoursForLerp);
+    } else if (obj.hours >= 18 && obj.hours < 21) {
+      hoursForLerp = map(obj.hours, 18, 21, 0, 1);
+      colorL = lerpColor(skyBlue, darkblue, hoursForLerp);
+    } else if (obj.hours >= 21 && obj.hours < 24) {
+      hoursForLerp = map(obj.hours, 21, 24, 0, 1);
+      colorL = lerpColor(darkblue, black, hoursForLerp);}
+  
   console.log(hoursForLerp)
+
+
   // I want to present at least 6 colours white,yellow,blue,pink,purple,black
-  let bluram =map(obj.millis,0,1000,100,300)
-  push();
+  // let bluram =map(obj.millis,0,1000,100,300)
+  
   drawingContext.shadowOffsetX = 2;
   drawingContext.shadowOffsetY = -2;
-  drawingContext.shadowBlur = bluram;
+  drawingContext.shadowBlur = 300;
+  // drawingContext.shadowBlur = bluram;
   drawingContext.shadowColor = 'white';
-  background(0);
+  
   noStroke(0)
   fill(colorL)
   ellipse(width / 2, height / 2, 300, 300);
   //Center clock
 
-  pop();
+
 
   // let secondsWithFraction   = seconds + (millis / 1000.0);
   // let ellipsesmooth  = map(secondsWithFraction, 0, 60, 0, width*6)
@@ -79,15 +115,35 @@ angleMode(DEGREES)
 
   for( let i=0; i<24; i++){
 
+    if(i==obj.hours){
+      size = 5;
+    }
+    else{
+      size = 0;
+    }
 
 rotate(360/24)
 
-rect(0,height-380,5,30)
+rect(0,height-380,size,size*6)///5,30
 
-  
+}
+for( let ii=0; ii<60; ii++){
+
+  if(ii==obj.minutes){
+    sizee = 2;
   }
+  else{
+    sizee = 0;
+  }
+
+rotate(360/60)
+
+rect(0,height-390,sizee,sizee*20)///5,30
+
+}
+
   pop();
 
-  
+
 //
 }
