@@ -12,3 +12,18 @@ I have recreated one of Maeda's clocks, particularly choosing the one positioned
 I haven't coded in about six months, so I found myself needing to recall the basics of coding to recreate this iteration. First, I used 'let' to established the initial x and y coordinated for the first ellipse. Then, I proceeded to draw the numbers, ensuring they were sized appropriately to fit within the confines of each ellipse.
 During my exploration of the p5.js reference, I came across a shadow effect that caught my attention. Recognizing its potential to enhance the visual effect of my sketches, particularly in simulating lighting effects. By using this code, I was able to achieve a radiant, luminous effect on the featured ellipses.
 // particles 
+
+
+
+#Original Clock
+
+//drawing shadow
+
+//an ellipse rotating by millis
+
+//rotate bar
+
+
+I achieved the functionality of changing the colour of the clock based on the time using "if' and 'else' statements. I divided the entire 24 hours into 8 intervals of 3 hours each, and chose appropriate colours (black, darkblue, skyblue, lemon, yellow, deepyellow and back to skyblue, darkblue)for each section. This allowed me to represent the clock with varioue colours that allign with each time intervals, as per my initial idea.
+
+
