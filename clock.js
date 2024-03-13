@@ -12,9 +12,8 @@ function draw_clock(obj) {
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
   
-  background(0); // dark grey
+  
 
- 
 
 
 
@@ -25,12 +24,18 @@ function draw_clock(obj) {
   let deepYellow = color(245,174,101)
   let lemon = color(255,233,170)
   let skyBlue = color(159,197,232)
-  
+
+  // let img = loadImage('BAR.png');
+
+ // dark grey
 
   let hoursForLerp = map(obj.hours, 0,23,0,1)
   // let ZerotothreeLerp = map(obj.hours, 0,3,0,1)
 
   let colorL =lerpColor(black, darkblue, hoursForLerp);
+
+  let BcolorL =lerpColor(black,white,hoursForLerp)
+  background(0);
   
   if (obj.hours >= 0 && obj.hours < 3) {
     hoursForLerp = map(obj.hours, 0, 3, 0, 1);
@@ -63,11 +68,12 @@ function draw_clock(obj) {
   // I want to present at least 6 colours white,yellow,blue,pink,purple,black
   // let bluram =map(obj.millis,0,1000,100,300)
   
-  drawingContext.shadowOffsetX = 2;
-  drawingContext.shadowOffsetY = -2;
-  drawingContext.shadowBlur = 300;
+  // drawingContext.shadowOffsetX = 2;
+  // drawingContext.shadowOffsetY = -2;
+  drawingContext.shadowBlur = 100;
   // drawingContext.shadowBlur = bluram;
   drawingContext.shadowColor = 'white';
+ 
   
   noStroke(0)
   fill(colorL)
@@ -87,7 +93,6 @@ function draw_clock(obj) {
   // rotate(5)
   // rect(width/2,height-400,5,30)
   // pop();
- 
 
 
 push();
@@ -100,6 +105,7 @@ push();
   // ellipse(0, 0, 30, 30);
 
   ellipse(0, 0, 10, 10);
+  
   pop();
 
  
@@ -113,37 +119,51 @@ angleMode(DEGREES)
   
   translate(width/2,height/2)
 
-  for( let i=0; i<24; i++){
+  for( let i=1; i<=24; i++){
 
     if(i==obj.hours){
-      size = 5;
+      size = 10;
     }
     else{
-      size = 0;
+      size = 5;
     }
 
-rotate(360/24)
+rotate(360/12)
 
-rect(0,height-380,size,size*6)///5,30
+drawingContext.shadowBlur = 8;
+// drawingContext.shadowBlur = bluram;
+drawingContext.shadowColor = 'white';
+
+
+rect(-2.5,-150,size,size*6)///5,30
 
 }
+
 for( let ii=0; ii<60; ii++){
 
-  if(ii==obj.minutes){
-    sizee = 2;
+  if(ii+1==obj.minutes){
+    sizee = 5;
   }
   else{
-    sizee = 0;
+    sizee = 1;
   }
 
 rotate(360/60)
 
-rect(0,height-390,sizee,sizee*20)///5,30
+rect(-0.5,-150,sizee,sizee*20)///5,30
+// rect(-0.5,-150,sizee,sizee*20)
+// rect(-0.5,-150,sizee,sizee*20)
+// rect(-0.5,-150,sizee,sizee*20)
 
 }
 
-  pop();
+pop();
 
+console.log(obj.hours)
 
 
 }
+
+
+
+
