@@ -19,7 +19,7 @@ During my exploration of the p5.js reference, I came across a shadow effect that
 # Original Clock
 
 ### drawing shadow_
-I use the drawingContect.shadow code and set the shadow colour to white and increased the blur value to give a glowing effect as I planned.
+I use the [drawingContect.shadow function](https://p5js.org/reference/#/p5/drawingContext) and set the shadow colour to white and increased the blur value to give a glowing effect as I planned.
 ![preview (1)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/1630d5dd-f945-41ae-8bad-587b3cfd8583)
 
 
@@ -38,7 +38,7 @@ I thought about how to represent the hours and minutes effectively, and I decide
 I achieved the functionality of changing the colour of the clock based on the time using "if' and 'else' statements. I divided the entire 24 hours into 8 intervals of 3 hours each, and chose appropriate colours (black, darkblue, skyblue, lemon, yellow, deepyellow and back to skyblue, darkblue)for each section. This allowed me to represent the clock with varioue colours that allign with each time intervals, as per my initial idea.
 
 ### bacground circle_
-I felt that the design of my clock was too simple and looked boring, so I wanted to add something more special to it. In conclusion, I initially attempted to give the background a moving gradient effect, but it didn't turn out as I wanted. Instead, I decided to create a large moving circle as the background and added shadows to it. When multiple circles overlapped, the result turned out to be very satisfying and I really like it.
+I felt that the design of my clock was too simple and looked boring, so I wanted to add something more special to it. In conclusion, I initially attempted to give the background a moving gradient effect,[this is a link I got inspired](https://www.youtube.com/watch?v=D6EiRSRhsbQ) but it didn't turn out as I wanted. Instead, I decided to create a large moving circle as the background and added shadows to it. When multiple circles overlapped, the result turned out to be very satisfying and I really like it.
 ![preview (5)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/38d644c0-9522-4889-83c2-7cef65ec82ab)
 ![preview (6)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/39fbff8e-31b0-4f32-a7ad-07ccf1ea4692)
 

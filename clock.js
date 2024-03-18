@@ -64,14 +64,14 @@ function draw_clock(obj) {
       hoursForLerp = map(obj.hours, 21, 24, 0, 1);
       colorL = lerpColor(darkblue, black, hoursForLerp);}
   
-  console.log(hoursForLerp)
+  //console.log(hoursForLerp)
 
 
   background(colorL);//////Background lerp colour
  
 
 
-  if(obj.seconds_until_alarm <0){
+  if(obj.seconds_until_alarm < 0){
   
    
   drawingContext.shadowBlur = 500;
@@ -82,11 +82,15 @@ function draw_clock(obj) {
     //alarm
     let bluram =map(obj.millis,0,2000,50,500)
       drawingContext.shadowBlur = bluram
-    }
+
+  }else {drawingContext.shadowBlur = 500;}
 
 
-  Xmove =Xmove+1 *Xdirection
-  Ymove =Ymove+1*Ydirection
+  // Xmove =Xmove+1 *Xdirection
+  // Ymove =Ymove+1*Ydirection
+  Xmove =width/2
+  Ymove =height/2
+  
   
   if (Xmove  < 0 || Xmove  > width - 100) {
     Xdirection = Xdirection*-1; 
@@ -183,25 +187,83 @@ function draw_clock(obj) {
   
   pop();
 
-
-  
-
-
-
 /////////////////////// ////center ellipse
 
+
+////////////////////////HAND 
+if(obj.seconds_until_alarm < 0){////////////ellipse alarm 
  
 fill(255)
 ellipse(Xmove,Ymove,10)
 
-// ellipse(width/2,height/2,10)
-let SIZE =map(obj.millis,0,999,0,30)
+
+let SIZE =map(obj.millis,0,999,30,0)
 
 push();  
 angleMode(DEGREES)
  
   
-  // translate(width/2,height/2)
+  translate(Xmove,Ymove)
+
+  for( let i=0; i<=23; i++){
+
+    rotate(360/12)
+    if(i+1==obj.hours){
+      size = 10;
+    }
+    else{
+      size = 5;
+    }
+    
+
+drawingContext.shadowBlur = 8;
+drawingContext.shadowColor = 'white';
+
+
+
+noStroke()
+// rect(-2.5,-150,size,size*6)//original
+rect(-2.5,-200,size,size*6)
+rect(-2.5,-200,size,size*6)
+rect(-2.5,-200,size,size*6)
+rect(-2.5,-200,size,size*6)
+///Hourhand
+
+}
+
+
+
+for( let ii=0; ii<60; ii++){
+
+  if(ii+1==obj.minutes){
+    sizee = 5;
+  }
+  else{
+    sizee = 1;
+  }
+
+
+    rotate(360/60)
+
+rect(-0.5,-200,sizee,sizee*20)///5,30 mc
+rect(-0.5,-200,sizee,sizee*20)
+rect(-0.5,-200,sizee,sizee*20)
+rect(-0.5,-200,sizee,sizee*20)
+///minutehand
+
+} 
+
+}else if(obj.seconds_until_alarm > 0){
+  fill(255)
+ellipse(Xmove,Ymove,10)
+
+
+// let SIZE =map(obj.millis,0,999,0,30)
+
+push();  
+angleMode(DEGREES)
+ 
+  
   translate(Xmove,Ymove)
 
   for( let i=0; i<=23; i++){
@@ -215,7 +277,6 @@ angleMode(DEGREES)
     }
 
 drawingContext.shadowBlur = 8;
-// drawingContext.shadowBlur = bluram;
 drawingContext.shadowColor = 'white';
 
 
@@ -226,9 +287,11 @@ rect(-2.5,-200,size,size*6)
 rect(-2.5,-200,size,size*6)
 rect(-2.5,-200,size,size*6)
 rect(-2.5,-200,size,size*6)
-///Draw on the mc
+///Hourhand
 
 }
+
+
 
 for( let ii=0; ii<60; ii++){
 
@@ -239,31 +302,106 @@ for( let ii=0; ii<60; ii++){
     sizee = 1;
   }
 
-rotate(360/60)
-ellipse(Xmove/2,Ymove/2,10)
-ellipse(Xmove/3,Ymove/3,10)
+
+    rotate(360/60)
+     ellipse(Xmove/2,Ymove/2,10,10)
+  ellipse(Xmove/2.5,Ymove/2.5,10,10)
+  ellipse(Xmove/4,Ymove/2,10,10)
+
 rect(-0.5,-200,sizee,sizee*20)///5,30 mc
 rect(-0.5,-200,sizee,sizee*20)
 rect(-0.5,-200,sizee,sizee*20)
 rect(-0.5,-200,sizee,sizee*20)
+}}
+else{fill(255)
+  ellipse(Xmove,Ymove,10)
+  
+  // ellipse(width/2,height/2,10)
+  let SIZE =map(obj.millis,0,999,0,30)
+  
+  push();  
+  angleMode(DEGREES)
+   
+    
+    // translate(width/2,height/2)
+    translate(Xmove,Ymove)
+  
+    for( let i=0; i<=23; i++){
+  
+      rotate(360/12)
+      if(i+1==obj.hours){
+        size = 10;
+      }
+      else{
+        size = 5;
+      }
+  
+  drawingContext.shadowBlur = 8;
+  // drawingContext.shadowBlur = bluram;
+  drawingContext.shadowColor = 'white';
+  
+  
+  
+  noStroke()
+  // rect(-2.5,-150,size,size*6)//original
+  rect(-2.5,-200,size,size*6)
+  rect(-2.5,-200,size,size*6)
+  rect(-2.5,-200,size,size*6)
+  rect(-2.5,-200,size,size*6)
+  ///Hourhand
+  
+  }
+  
+  
+  
+  for( let ii=0; ii<60; ii++){
+  
+    if(ii+1==obj.minutes){
+      sizee = 5;
+    }
+    else{
+      sizee = 1;
+    }
+  
+  
+      rotate(360/60)
+  
+  rect(-0.5,-200,sizee,sizee*20)///5,30 mc
+  rect(-0.5,-200,sizee,sizee*20)
+  rect(-0.5,-200,sizee,sizee*20)
+  rect(-0.5,-200,sizee,sizee*20)
+  
+  } }
 
 // rect(-0.5,-150,sizee,sizee*20) //original
 // rect(-0.5,-150,sizee,sizee*20)
 // rect(-0.5,-150,sizee,sizee*20)
 
+
+
+
+  
+  //     rotate(360/60)
+  // ellipse(Xmove/2,Ymove/2,10,10)
+  // ellipse(Xmove/2.5,Ymove/2.5,10,10)
+  // ellipse(Xmove/4,Ymove/2,10,10)
+  // rect(-0.5,-200,sizee,sizee*20)///5,30 mc
+  // rect(-0.5,-200,sizee,sizee*20)
+  // rect(-0.5,-200,sizee,sizee*20)
+  // rect(-0.5,-200,sizee,sizee*20)
 }
+  
+
 
 pop();
 
 
-console.log(obj.hours)
+console.log(obj.seconds_until_alarm)
 
 
 
   
 
-
-}
 
 
 
