@@ -30,6 +30,8 @@ I used the code translate(p5.Vector.fromAngle(obj.millis / width * 6, height / 3
 
 //rotate bar_
 I thought about how to represent the hours and minutes effectively, and I decided to create a design inspired by an analog clock to fill the empty space of the main clock. In order to achieve this, I used a for loop to make the hour and minute hands rotate 360 degrees based on the hour and minute values, changing in size to indicate the time.
+![preview (3)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/0d40e7d8-aa2e-4165-9ee8-1532dac46800)
+![preview (4)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/774e86f0-c862-479c-ac10-3b56bcf5adec)
 
 
 //Lerpcolor_
@@ -37,11 +39,18 @@ I achieved the functionality of changing the colour of the clock based on the ti
 
 //bacground circle_
 I felt that the design of my clock was too simple and looked boring, so I wanted to add something more special to it. In conclusion, I initially attempted to give the background a moving gradient effect, but it didn't turn out as I wanted. Instead, I decided to create a large moving circle as the background and added shadows to it. When multiple circles overlapped, the result turned out to be very satisfying and I really like it.
+![preview (5)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/38d644c0-9522-4889-83c2-7cef65ec82ab)
+![preview (6)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/39fbff8e-31b0-4f32-a7ad-07ccf1ea4692)
+
 
 
 //Clock design alteration_
 I found that the moving circle behind the clock was more eye-catching than the clock itself, which was little bit bothering me. So I decided to move the clock on the moving circle, thinking it would look better. I also adjusted the color of the circle change to match the backgroung color and I made it change 3 colors. (yellow=mornig,afternoom/blue=evening/grey=night) Additionally, I adjusted the opacity to make the brightness strongest during the yellow circle.
+![preview (9)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/936c0017-51f6-4a70-91a6-1a176f493566)
+![preview (10)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/f2983e72-6c6b-40ed-aa09-516361acc72e)
 
 
-#Clock Alarm_
+#Clock Alarm_/
 I applied and effect where a white shadow behind the moving circle in alarm mode, blinking based on milliseconds. However, when debugging, I noticed an issue where the shadow behind the circle was shrinking to a smaller size than the original size.
+![preview (13)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/41658071-0417-4a42-b053-bfa6ff9b8325)
+![preview (14)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/7dde598f-4f7d-4359-a247-e7dffd04328e)
