@@ -206,9 +206,9 @@ angleMode(DEGREES)
   translate(Xmove,Ymove)
 
   for( let i=0; i<=23; i++){
-
-    rotate(360/12)
-    if(i+1==obj.hours){
+if( i > 0){
+    rotate(360/12)}
+    if(i==obj.hours){
       size = 10;
     }
     else{

@@ -35,10 +35,10 @@ I thought about how to represent the hours and minutes effectively, and I decide
 
 
 ### Lerpcolor_
-I achieved the functionality of changing the colour of the clock based on the time using "if' and 'else' statements. I divided the entire 24 hours into 8 intervals of 3 hours each, and chose appropriate colours (black, darkblue, skyblue, lemon, yellow, deepyellow and back to skyblue, darkblue)for each section. This allowed me to represent the clock with varioue colours that allign with each time intervals, as per my initial idea.
+I achieved the functionality of changing the colour of the clock based on the time using "if' and 'else if' statements. I divided the entire 24 hours into 8 intervals of 3 hours each, and chose appropriate colours (black, darkblue, skyblue, lemon, yellow, deepyellow and back to skyblue, darkblue)for each section. This allowed me to represent the clock with varioue colours that allign with each time intervals, as per my initial idea.
 
 ### bacground circle_
-I felt that the design of my clock was too simple and looked boring, so I wanted to add something more special to it. In conclusion, I initially attempted to give the background a moving gradient effect,[this is a link I got inspired](https://www.youtube.com/watch?v=D6EiRSRhsbQ) but it didn't turn out as I wanted. Instead, I decided to create a large moving circle as the background and added shadows to it. When multiple circles overlapped, the result turned out to be very satisfying and I really like it.
+I felt that the design of my clock was too simple and looked boring, so I wanted to add something more special to it. In conclusion, I initially attempted to give the background a moving gradient effect,[(this is a link I got inspired)](https://www.youtube.com/watch?v=D6EiRSRhsbQ) but it didn't turn out as I wanted. Instead, I decided to create a large moving circle as the background and added shadows to it. When multiple circles overlapped, the result turned out to be very satisfying and I really like it.
 ![preview (5)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/38d644c0-9522-4889-83c2-7cef65ec82ab)
 ![preview (6)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/39fbff8e-31b0-4f32-a7ad-07ccf1ea4692)
 
@@ -57,7 +57,7 @@ I applied and effect where a white shadow behind the moving circle in alarm mode
 
 It turns out there was an extra shadow applied to another ellipse, which was causing this error. Once I removed it, everything worked fine.
 
-Somehow, I found a really cool effect by accident. I placed the ellipse, which is set with Xmove and Ymove, under the rotation code, and I got this! 
+Somehow, I found a really cool effect by accident. I placed the ellipse, which is set with Xmove and Ymove, under the rotation function, and I got this! 
 ![preview (16)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/14d973c2-7409-4711-b94e-4cbd442e29f6)
 ![preview (17)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/12323a75-5d34-4f76-b781-e4600594bc3a)
 
