@@ -54,3 +54,10 @@ I found that the moving circle behind the clock was more eye-catching than the c
 I applied and effect where a white shadow behind the moving circle in alarm mode, blinking based on milliseconds. However, when debugging, I noticed an issue where the shadow behind the circle was shrinking to a smaller size than the original size.
 ![preview (13)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/41658071-0417-4a42-b053-bfa6ff9b8325)
 ![preview (14)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/7dde598f-4f7d-4359-a247-e7dffd04328e)
+
+It turns out there was an extra shadow applied to another ellipse, which was causing this error. Once I removed it, everything worked fine.
+
+Somehow, I found a really cool effect by accident. I placed the ellipse, which is set with Xmove and Ymove, under the rotation code, and I got this! 
+![preview (16)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/14d973c2-7409-4711-b94e-4cbd442e29f6)
+![preview (17)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/12323a75-5d34-4f76-b781-e4600594bc3a)
+

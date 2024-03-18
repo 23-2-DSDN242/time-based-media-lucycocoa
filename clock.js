@@ -19,7 +19,6 @@ function draw_clock(obj) {
   //        > 0 --> the number of seconds until alarm should go off
   
   
-  if(obj.seconds_until_alarm <0){}
 
 
 
@@ -36,16 +35,10 @@ function draw_clock(obj) {
   
 
   let hoursForLerp = map(obj.hours, 0,23,0,1)
-  // let ZerotothreeLerp = map(obj.hours, 0,3,0,1)
 
   let colorL =lerpColor(black, darkblue, hoursForLerp);
 
-  let BcolorL =lerpColor(black,white,hoursForLerp)
-  // background(203,221,237); //grey,skyblue?
-  // background(7,55,99);
-  
 
-  
   if (obj.hours >= 0 && obj.hours < 3) {
     hoursForLerp = map(obj.hours, 0, 3, 0, 1);
     colorL = lerpColor(black, darkblue, hoursForLerp);
@@ -74,18 +67,20 @@ function draw_clock(obj) {
   console.log(hoursForLerp)
 
 
-  background(colorL);
+  background(colorL);//////Background lerp colour
+ 
 
 
   if(obj.seconds_until_alarm <0){
   
-  
+   
   drawingContext.shadowBlur = 500;
-  drawingContext.shadowColor = 'colorL';
+  drawingContext.shadowColor = 'white';
   
   }else if
    (obj.seconds_until_alarm > 0){
-    let bluram =map(obj.millis,0,2000,50,500)//alarm
+    //alarm
+    let bluram =map(obj.millis,0,2000,50,500)
       drawingContext.shadowBlur = bluram
     }
 
@@ -101,7 +96,6 @@ function draw_clock(obj) {
     Ydirection = Ydirection *-1;
   }
   
-
   let sizeStep =400;
   let howmanycircle = 50;
   let opacityAM = 20;
@@ -113,34 +107,30 @@ function draw_clock(obj) {
   } else if(obj.hours >=17 && obj.hours<22){
     clockCL = color(159,197,232,20)
   } 
-  noStroke()
   
-  // fill(159,197,232,20)
+  
+  noStroke()
   fill(clockCL)
   
-
   for(let i =0; i<howmanycircle; i++){
     ellipse(Xmove,Ymove,sizeStep+i)
  
-  } ////background moving circle
+  } //////////////////////////////background moving circle
   
 
 
   
 
-  // let bluram =map(obj.millis,0,1000,100,300)
-  
-  // drawingContext.shadowOffsetX = 2;
-  // drawingContext.shadowOffsetY = -2;
-  drawingContext.shadowBlur = 100;
-  drawingContext.shadowBlur = 100;
-  drawingContext.shadowColor = 'white';
+ 
+ 
+  // drawingContext.shadowBlur = 0;
+  // drawingContext.shadowColor = 'white';
  
   stroke(255)
   strokeWeight(5)
   noFill()
-  // ellipse(width / 2, height / 2, 300, 300); //original
-  ellipse(Xmove,Ymove, 400, 400); //Draw on the moving circle
+  
+  ellipse(Xmove,Ymove, 400, 400); ///////ellipse Draw on the moving circle
   //Center clock
 
 
@@ -196,19 +186,16 @@ function draw_clock(obj) {
 
   
 
+
+
+/////////////////////// ////center ellipse
+
  
-  fill(255)
-  ellipse(Xmove,Ymove,10)
+fill(255)
+ellipse(Xmove,Ymove,10)
 
 // ellipse(width/2,height/2,10)
-  let SIZE =map(obj.millis,0,999,0,30)
-
-  
-
-
-  ////center ellipse
-
-
+let SIZE =map(obj.millis,0,999,0,30)
 
 push();  
 angleMode(DEGREES)
@@ -231,6 +218,8 @@ drawingContext.shadowBlur = 8;
 // drawingContext.shadowBlur = bluram;
 drawingContext.shadowColor = 'white';
 
+
+
 noStroke()
 // rect(-2.5,-150,size,size*6)//original
 rect(-2.5,-200,size,size*6)
@@ -251,7 +240,8 @@ for( let ii=0; ii<60; ii++){
   }
 
 rotate(360/60)
-
+ellipse(Xmove/2,Ymove/2,10)
+ellipse(Xmove/3,Ymove/3,10)
 rect(-0.5,-200,sizee,sizee*20)///5,30 mc
 rect(-0.5,-200,sizee,sizee*20)
 rect(-0.5,-200,sizee,sizee*20)
