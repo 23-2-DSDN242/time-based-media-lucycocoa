@@ -1,6 +1,12 @@
 /*
  * use p5.js to draw a clock on a 960x500 canvas
  */
+
+let Xmove =1
+let Ymove = 1
+let Xdirection =1
+let Ydirection =1
+
 function draw_clock(obj) {
   // draw your own clock here based on the values of obj:
   //    obj.hours goes from 0-23
@@ -13,7 +19,7 @@ function draw_clock(obj) {
   //        > 0 --> the number of seconds until alarm should go off
   
   
-
+  if(obj.seconds_until_alarm <0){}
 
 
 
@@ -22,12 +28,12 @@ function draw_clock(obj) {
   let white= color(255)
   let darkblue = color(7,55,99)
   let deepYellow = color(245,174,101)
-  let lemon = color(255,233,170)
+  let lemon = color(255,236,177)
   let skyBlue = color(159,197,232)
 
-  // let img = loadImage('BAR.png');
 
- // dark grey
+
+  
 
   let hoursForLerp = map(obj.hours, 0,23,0,1)
   // let ZerotothreeLerp = map(obj.hours, 0,3,0,1)
@@ -35,7 +41,10 @@ function draw_clock(obj) {
   let colorL =lerpColor(black, darkblue, hoursForLerp);
 
   let BcolorL =lerpColor(black,white,hoursForLerp)
-  background(0);
+  // background(203,221,237); //grey,skyblue?
+  // background(7,55,99);
+  
+
   
   if (obj.hours >= 0 && obj.hours < 3) {
     hoursForLerp = map(obj.hours, 0, 3, 0, 1);
@@ -65,77 +74,170 @@ function draw_clock(obj) {
   console.log(hoursForLerp)
 
 
-  // I want to present at least 6 colours white,yellow,blue,pink,purple,black
+  background(colorL);
+
+
+  if(obj.seconds_until_alarm <0){
+  
+  
+  drawingContext.shadowBlur = 500;
+  drawingContext.shadowColor = 'colorL';
+  
+  }else if
+   (obj.seconds_until_alarm > 0){
+    let bluram =map(obj.millis,0,2000,50,500)//alarm
+      drawingContext.shadowBlur = bluram
+    }
+
+
+  Xmove =Xmove+1 *Xdirection
+  Ymove =Ymove+1*Ydirection
+  
+  if (Xmove  < 0 || Xmove  > width - 100) {
+    Xdirection = Xdirection*-1; 
+  }
+  
+  if (Ymove  < 0 || Ymove  > height - 100) {
+    Ydirection = Ydirection *-1;
+  }
+  
+
+  let sizeStep =400;
+  let howmanycircle = 50;
+  let opacityAM = 20;
+
+ let clockCL = color(223,223,223,opacityAM) 
+
+  if(obj.hours >=4 && obj.hours <17){
+    clockCL =  color(255,217,102,opacityAM+80)
+  } else if(obj.hours >=17 && obj.hours<22){
+    clockCL = color(159,197,232,20)
+  } 
+  noStroke()
+  
+  // fill(159,197,232,20)
+  fill(clockCL)
+  
+
+  for(let i =0; i<howmanycircle; i++){
+    ellipse(Xmove,Ymove,sizeStep+i)
+ 
+  } ////background moving circle
+  
+
+
+  
+
   // let bluram =map(obj.millis,0,1000,100,300)
   
   // drawingContext.shadowOffsetX = 2;
   // drawingContext.shadowOffsetY = -2;
   drawingContext.shadowBlur = 100;
-  // drawingContext.shadowBlur = bluram;
+  drawingContext.shadowBlur = 100;
   drawingContext.shadowColor = 'white';
  
-  
-  noStroke(0)
-  fill(colorL)
-  ellipse(width / 2, height / 2, 300, 300);
+  stroke(255)
+  strokeWeight(5)
+  noFill()
+  // ellipse(width / 2, height / 2, 300, 300); //original
+  ellipse(Xmove,Ymove, 400, 400); //Draw on the moving circle
   //Center clock
 
 
 
-  // let secondsWithFraction   = seconds + (millis / 1000.0);
-  // let ellipsesmooth  = map(secondsWithFraction, 0, 60, 0, width*6)
 
-  // angleMode(DEGREES)
-  // push();
-  // rotate(0);
-  // fill(255)
-  // rect(width/2,height-400,5,30)
-  // rotate(5)
-  // rect(width/2,height-400,5,30)
-  // pop();
+  
+ push();
 
-
-push();
+ 
 
   noStroke()
   fill(255)
-  translate(width/2,height/2)
+  translate(Xmove,Ymove) ////Draw on the moving circle
+  // translate(width/2,height/2)
+  
   // translate(p5.Vector.fromAngle(obj.seconds/ width*102,height/3))
   translate(p5.Vector.fromAngle(obj.millis/ width*6,height/3))
   // ellipse(0, 0, 30, 30);
 
   ellipse(0, 0, 10, 10);
+
+  //alarm
+//   translate(p5.Vector.fromAngle(obj.millis* width*6,height/3))
+//   // ellipse(0, 0, 30, 30);
+// fill('red')
+//   ellipse(0, 0, 30, 30);
+
+
+
+  // translate(p5.Vector.fromAngle(obj.millis/ width*6+30,height/3+10))
+  // fill('red')
+  // ellipse(0, 0, 20, 20);
+
+  // translate(p5.Vector.fromAngle(-obj.millis/ width*6+30,height/3+10))
+  // fill('blue')
+  // ellipse(0, 0, 15, 15);
+  // translate(p5.Vector.fromAngle(obj.millis/ width*6,height/3))
+  // fill('red')
+  // ellipse(0, 0, 20, 20);
+
+  // translate(p5.Vector.fromAngle(-obj.millis/ width*6,height/3))
+  // fill('blue')
+  // ellipse(0, 0, 15, 15);
+
+
+  // translate(p5.Vector.fromAngle(obj.millis/ width*6,height/3))
+  // fill('green')
+  // ellipse(0, 0, 20, 20);
+  
   
   pop();
 
- 
+
+  
+
  
   fill(255)
-ellipse(width/2,height/2,10)
+  ellipse(Xmove,Ymove,10)
+
+// ellipse(width/2,height/2,10)
+  let SIZE =map(obj.millis,0,999,0,30)
+
+  
+
+
+  ////center ellipse
+
+
 
 push();  
 angleMode(DEGREES)
-  let hourHand =map(obj.hours,0,23,0,360)
+ 
   
-  translate(width/2,height/2)
+  // translate(width/2,height/2)
+  translate(Xmove,Ymove)
 
-  for( let i=1; i<=24; i++){
+  for( let i=0; i<=23; i++){
 
-    if(i==obj.hours){
+    rotate(360/12)
+    if(i+1==obj.hours){
       size = 10;
     }
     else{
       size = 5;
     }
 
-rotate(360/12)
-
 drawingContext.shadowBlur = 8;
 // drawingContext.shadowBlur = bluram;
 drawingContext.shadowColor = 'white';
 
-
-rect(-2.5,-150,size,size*6)///5,30
+noStroke()
+// rect(-2.5,-150,size,size*6)//original
+rect(-2.5,-200,size,size*6)
+rect(-2.5,-200,size,size*6)
+rect(-2.5,-200,size,size*6)
+rect(-2.5,-200,size,size*6)
+///Draw on the mc
 
 }
 
@@ -150,8 +252,12 @@ for( let ii=0; ii<60; ii++){
 
 rotate(360/60)
 
-rect(-0.5,-150,sizee,sizee*20)///5,30
-// rect(-0.5,-150,sizee,sizee*20)
+rect(-0.5,-200,sizee,sizee*20)///5,30 mc
+rect(-0.5,-200,sizee,sizee*20)
+rect(-0.5,-200,sizee,sizee*20)
+rect(-0.5,-200,sizee,sizee*20)
+
+// rect(-0.5,-150,sizee,sizee*20) //original
 // rect(-0.5,-150,sizee,sizee*20)
 // rect(-0.5,-150,sizee,sizee*20)
 
@@ -159,7 +265,12 @@ rect(-0.5,-150,sizee,sizee*20)///5,30
 
 pop();
 
+
 console.log(obj.hours)
+
+
+
+  
 
 
 }
