@@ -49,6 +49,11 @@ I found that the moving circle behind the clock was more eye-catching than the c
 ![preview (9)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/936c0017-51f6-4a70-91a6-1a176f493566)
 ![preview (10)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/f2983e72-6c6b-40ed-aa09-516361acc72e)
 
+morning![preview (26)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/9833c0ae-7c49-4907-99f3-1d7d8175073b)
+
+evening![preview (27)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/d05349e4-c016-4f26-8d2e-3ace95d95410)
+
+night![preview (28)](https://github.com/23-2-DSDN242/time-based-media-lucycocoa/assets/140350024/4c97d05f-7751-49ec-b739-84e3556375d1)
 
 # Clock Alarm_/
 I applied and effect where a white shadow behind the moving circle in alarm mode, blinking based on milliseconds. However, when debugging, I noticed an issue where the shadow behind the circle was shrinking to a smaller size than the original size.

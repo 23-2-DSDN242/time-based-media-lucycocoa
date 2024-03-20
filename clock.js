@@ -86,10 +86,10 @@ function draw_clock(obj) {
   }else {drawingContext.shadowBlur = 500;}
 
 
-  // Xmove =Xmove+1 *Xdirection
-  // Ymove =Ymove+1*Ydirection
-  Xmove =width/2
-  Ymove =height/2
+  Xmove =Xmove+1 *Xdirection
+  Ymove =Ymove+1*Ydirection
+  // Xmove =width/2
+  // Ymove =height/2
   
   
   if (Xmove  < 0 || Xmove  > width - 100) {
@@ -206,8 +206,8 @@ angleMode(DEGREES)
   translate(Xmove,Ymove)
 
   for( let i=0; i<=23; i++){
-if( i > 0){
-    rotate(360/12)}
+
+    rotate(360/12)
     if(i==obj.hours){
       size = 10;
     }
